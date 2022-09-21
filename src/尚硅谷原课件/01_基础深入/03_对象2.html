@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>03_相关问题</title>
+</head>
+<body>
+  <script>
+    //什么时候必须使用['属性名']的方式?
+    // 1:属性名包含特殊字符: - 空格等
+     var p = { }
+    //p.content-type = 'text/json'  这种方法不能用
+    p['content-type'] = 'text/json' // 可以用
+
+    //2:变量名字不确定
+    var myName = '孙乾博'
+    var age = 18
+    // p.myName = age 不能用
+
+    p[myName] = age
+    console.log(myName);
+  </script>
+</body>
+</html>

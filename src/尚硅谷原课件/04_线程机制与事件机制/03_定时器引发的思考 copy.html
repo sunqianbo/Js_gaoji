@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>03_定时器引发的思考</title>
+</head>
+<body>
+
+<button id="btn">启动定时器</button>
+<script type="text/javascript">
+       setTimeout(()=>{
+        console.log('定时器1');
+       },2000)
+       setTimeout(()=>{
+        console.log('定时器2');
+       },1000)
+       function fun(){
+        console.log('我是函数');
+       }
+       fun()
+       for(var i = 0; i<1000; i++){
+         console.log('我是for循环');
+       }
+</script>
+</body>
+</html>

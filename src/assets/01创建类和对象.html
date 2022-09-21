@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //创建类  创建一个明星的类
+        class Star {
+            constructor(name, age){
+                 this.name = name,
+                 this.age = age
+            }
+            say(val){
+               console.log(val);
+            }
+        }
+       const sqb =  new Star('孙乾博',26)
+       const stt =  new Star('孙甜甜',18)
+       console.log(sqb);
+       console.log(stt);
+       sqb.say('你好')
+       stt.say('大家好')
+     /* 
+     1: 类是抽取对象中公共的一部分
+     2: 关键字class后面的类名习惯性大写
+     3: 只要new生成实例的时候,constructor构造函数会自动调用,并把结果返回非实例对象
+     */
+    </script>
+</body>
+</html>

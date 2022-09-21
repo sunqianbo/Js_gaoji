@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 需求 父类中有一个加法操作,子类有一个减法的操作,
+           但子也想要父类里面的加法操作
+        */
+
+         class Father {
+            constructor(x,y){
+                this.x = x
+                this.y = y
+            }
+            sum(){ //加法操作
+                console.log( this.x + this.y);
+            }
+         }
+         class Son extends Father {
+             constructor(x,y){ //减法操作
+                super(x,y)   //注意:此处super必须放到子类this之前,也就是先把父类里面的构造函数调用过来
+                this.x = x
+                this.y = y
+            }
+            subtract(){
+                 console.log( this.x - this.y);
+            }
+         }
+          var son = new Son(10,5)
+          son.subtract()
+          son.sum()
+    </script>
+</body>
+</html>

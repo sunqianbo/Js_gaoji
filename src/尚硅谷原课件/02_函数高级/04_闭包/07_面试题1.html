@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>07_面试题1</title>
+</head>
+<body>
+
+<script type="text/javascript">
+  /*
+   说说它们的输出情况
+   */
+
+  //代码片段一 (不是闭包)
+  var name = "The Window";
+  var object = {
+    name: "My Object",
+    getNameFunc: function () {
+      return function () {
+        return this.name;
+      };
+    }
+  };
+  console.log(object.getNameFunc()());  //object.getNameFunc()返回的是一个函数,
+                                        //函数后加()是直接调用,函数直接调用指向的window,所以打印"The Window"
+  //代码片段二 (是闭包)
+  var name2 = "The Window";
+  var object2 = {
+    name2: "My Object",
+    getNameFunc: function () {
+      var that = this;       //函数是object2调用的,所有这个this指向的是object2
+      return function () {
+        return that.name2;
+      };
+    }
+  };
+  console.log(object2.getNameFunc()()); //"My Object"
+</script>
+</body>
+</html>

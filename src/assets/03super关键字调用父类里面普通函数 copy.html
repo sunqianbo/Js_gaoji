@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         class Father {
+            say(){
+                console.log('我是爸爸的函数');
+            }
+         }
+         class Son extends Father {
+             say(){
+                console.log('我是儿子的函数');//如果自己有和父类相同的方法时,优先调用自己,其次调用继承过来的(就近原则)
+                super.say() //这是调用父亲的say
+             }
+         }
+          var son = new Son()
+          son.say()
+    </script>
+</body>
+</html>
